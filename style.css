@@ -1,0 +1,32 @@
+:root{--bg:#eef1f5;--ink:#1b2430;--mute:#5d6b7d;--line:#d3dae3;--acc:#3d4db7;--card:#fff}
+*{box-sizing:border-box}
+body{margin:0;padding:24px clamp(16px,4vw,48px);background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.5}
+h1{font-size:clamp(1.6rem,3.2vw,2.4rem);margin:0 0 6px;letter-spacing:-.02em}
+h2{font-size:1rem;margin:0 0 12px}
+header p{max-width:62ch;color:var(--mute);margin:0 0 20px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+button{font:inherit;border:1.5px solid var(--acc);background:var(--acc);color:#fff;padding:8px 16px;border-radius:6px;cursor:pointer}
+button.ghost,nav button{background:transparent;color:var(--acc)}
+nav button.on{background:var(--acc);color:#fff}
+button:focus-visible,input:focus-visible{outline:3px solid #9aa5ee;outline-offset:2px}
+.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+#stats{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--mute)}
+main{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+section{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+#board{width:100%;max-width:440px;height:auto;display:block}
+#board .cell{fill:#fff;stroke:var(--line)}
+#board .tok text{font-size:9px;font-weight:700;fill:#fff;text-anchor:middle;pointer-events:none}
+#board .tok circle{stroke:#fff;stroke-width:2}
+#topo{width:100%;height:auto}
+#topo line{stroke:var(--line);stroke-width:2}
+#topo circle{fill:#fff;stroke:var(--acc);stroke-width:2;transition:fill .2s}
+#topo g.on circle{fill:#c9cffa}
+#topo text{font-size:11px;text-anchor:middle;fill:var(--ink);pointer-events:none}
+#desc{color:var(--mute);font-size:.9rem;margin:8px 0 0}
+#log{margin:0;padding-left:0;list-style:none;height:300px;overflow:auto;font-size:.82rem}
+#log li{padding:3px 0;border-bottom:1px solid var(--line)}
+#log b{color:var(--acc);margin-right:6px}
+.results{margin-top:16px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cooperative Ludo – Agent Architectures – Agent Architectures</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Agents playing cooperative Ludo</h1>
+  <p>Four agents (Red, Green, Yellow, Blue) cooperate to bring all 16 Ludo tokens home. A token needs a 6 to leave the yard and an exact roll to finish; there is no capturing. Each architecture decides who may use which dice roll. Pick one, press Run, and compare.</p>
+</header>
+
+<nav id="tabs">
+  <button data-arch="central" class="on">1 · Centralized</button>
+  <button data-arch="hier">2 · Hierarchical</button>
+  <button data-arch="p2p">7 · Peer-to-Peer</button>
+</nav>
+
+<div class="controls">
+  <button id="run">Run</button>
+  <button id="reset" class="ghost">Reset</button>
+  <label>Speed <input id="speed" type="range" min="100" max="900" value="500"></label>
+  <span id="stats">Tick 0 · Messages 0 · Wasted rolls 0</span>
+</div>
+
+<main>
+  <section><h2>Ludo board</h2><svg id="board" viewBox="0 0 360 360"></svg></section>
+  <section><h2 id="archTitle">Topology</h2><svg id="topo" viewBox="0 0 360 270"></svg><p id="desc"></p></section>
+  <section><h2>Message log</h2><ol id="log"></ol></section>
+</main>
+
+<section class="results">
+  <h2>Comparison</h2>
+  <table>
+    <thead><tr><th>Architecture</th><th>Ticks</th><th>Messages</th><th>Wasted rolls</th></tr></thead>
+    <tbody id="results"></tbody>
+  </table>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
